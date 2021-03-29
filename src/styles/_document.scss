@@ -1,0 +1,32 @@
+@use "./config/typo" as t;
+
+html {
+  font-size: t.$base-font-size;
+  font-family: t.$default-font-stack;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%; // 1)
+  -webkit-text-size-adjust: 100%; // 1)
+  -moz-osx-font-smoothing: grayscale; // 2)
+  -webkit-font-smoothing: antialiased; // 2)
+  -ms-overflow-style: scrollbar; // 3)
+
+  // 1) Prevent font scaling in landscape while allowing user zoom on iOS devices
+
+  // 2) https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering
+
+  // 3) Prevent the scrollbar from overlapping content in IE/Edge
+  // (https://docs.microsoft.com/en-us/previous-versions//mt712067(v=vs.85)?redirectedfrom=MSDN)
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  position: relative;
+  box-sizing: border-box;
+}

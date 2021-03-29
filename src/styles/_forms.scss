@@ -1,0 +1,14 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  padding: 0;
+  border: 0;
+  appearance: none;
+  background: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+}

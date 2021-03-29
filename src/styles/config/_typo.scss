@@ -1,0 +1,8 @@
+$default-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+'Segoe UI Emoji', 'Segoe UI Symbol';
+
+// NOTE
+// This affects the definition/value for REM in the entire system.
+// its 62.5% because base browser has base font size as 16.
+// 62.5% of 16 = 10, making 1rem = 10 thereby making calculations easier.
+$base-font-size: 62.5%;
