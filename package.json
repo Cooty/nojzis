@@ -1,34 +1,35 @@
 {
-  "name": "nojzis",
-  "version": "1.0.0",
-  "description": "HTML5 soundboard application",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel src/index.html --open",
-    "build": "parcel build src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Cooty/nojzis.git"
-  },
-  "keywords": [
-    "soundboard"
-  ],
-  "author": "Tamas Kuti",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Cooty/nojzis/issues"
-  },
-  "homepage": "https://github.com/Cooty/nojzis#readme",
-  "dependencies": {
-    "vue": "^2.6.12",
-    "vue-hot-reload-api": "^2.3.4"
-  },
-  "devDependencies": {
-    "@vue/component-compiler-utils": "^3.2.0",
-    "parcel": "^1.12.4",
-    "sass": "^1.32.8",
-    "vue-template-compiler": "^2.6.12"
-  }
+    "name": "nojzis",
+    "version": "1.0.0",
+    "description": "HTML5 soundboard application",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/index.html --open",
+        "build": "parcel build src/index.html",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Cooty/nojzis.git"
+    },
+    "keywords": [
+        "soundboard"
+    ],
+    "author": "Tamas Kuti",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Cooty/nojzis/issues"
+    },
+    "homepage": "https://github.com/Cooty/nojzis#readme",
+    "dependencies": {
+        "vue": "^3.2.36"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.6.0",
+        "@parcel/transformer-vue": "^2.6.0",
+        "@vue/compiler-sfc": "^3.2.36",
+        "@vue/component-compiler-utils": "^3.3.0",
+        "parcel": "^2.6.0",
+        "sass": "^1.32.8"
+    }
 }
