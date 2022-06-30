@@ -4,8 +4,8 @@
     "description": "HTML5 soundboard application",
     "main": "index.js",
     "scripts": {
-        "dev": "parcel src/index.html --open",
-        "build": "parcel build src/index.html",
+        "dev": "vite",
+        "build": "vite build",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -22,14 +22,13 @@
     },
     "homepage": "https://github.com/Cooty/nojzis#readme",
     "dependencies": {
+        "pinia": "^2.0.14",
         "vue": "^3.2.36"
     },
     "devDependencies": {
-        "@parcel/transformer-sass": "^2.6.0",
-        "@parcel/transformer-vue": "^2.6.0",
+        "@vitejs/plugin-vue": "^1.6.1",
         "@vue/compiler-sfc": "^3.2.36",
-        "@vue/component-compiler-utils": "^3.3.0",
-        "parcel": "^2.6.0",
-        "sass": "^1.32.8"
+        "sass": "^1.32.8",
+        "vite": "^2.5.4"
     }
 }
