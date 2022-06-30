@@ -1,13 +1,13 @@
 <template>
     <li class="Sound">
-        <button type="button" class="Sound__button">
+        <button type="button" class="Sound__button" @click="playSound">
             <span class="Sound__button-content">
                 <span>
                     <span class="Sound__icon">
-                        {{icon}}
+                        {{ icon }}
                     </span>
                     <strong class="Sound__label">
-                        {{name}}
+                        {{ name }}
                     </strong>
                 </span>
             </span>
@@ -16,22 +16,40 @@
 </template>
 
 <script>
+import { useSoundStore, usePlayerStore } from "../store";
+
 export default {
     name: "Sound",
     props: {
         icon: {
-            type: String,
+            type: String
         },
         name: {
-            type: String,
+            type: String
+        },
+        fileName: {
+            type: String
         }
+    },
+    setup(props) {
+        const soundStore = useSoundStore();
+        const playerStore = usePlayerStore();
+        const playSound = () => {
+            if (playerStore.isPlaying) {
+                return;
+            }
+            soundStore.soundToPlay = props.fileName;
+        };
+
+        return {
+            playSound
+        };
     }
-}
+};
 </script>
 
 <style scoped lang="scss">
-
-
+@use "sass:math";
 .Sound {
     max-width: 50%;
     flex: 0 0 50%;
@@ -48,13 +66,12 @@ export default {
         width: 100%;
         overflow: hidden;
         height: 0;
-        padding-top: #{((1 / 1) * 100)}#{'%'};
+        padding-top: #{(math.div(1, 1) * 100)}#{"%"};
         border-radius: 12%;
         cursor: pointer;
         // TODO: Move to theme
         background: #2fb3ff;
-        box-shadow:  20px 20px 60px #2898d9,
-                    -20px -20px 60px #36ceff;
+        box-shadow: 20px 20px 60px #2898d9, -20px -20px 60px #36ceff;
     }
 
     &__button-content {
@@ -87,6 +104,5 @@ export default {
         // TODO: Move to theme
         color: white;
     }
-
 }
 </style>
