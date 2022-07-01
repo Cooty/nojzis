@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "HTML5 soundboard application",
     "main": "index.js",
+    "engines": {
+        "node": ">=12.2.0"
+    },
+    "public": false,
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -20,7 +24,7 @@
     "bugs": {
         "url": "https://github.com/Cooty/nojzis/issues"
     },
-    "homepage": "https://github.com/Cooty/nojzis#readme",
+    "homepage": "http://nojzis.xyz/",
     "dependencies": {
         "pinia": "^2.0.14",
         "vue": "^3.2.36"
