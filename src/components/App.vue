@@ -1,6 +1,7 @@
 <template>
     <main class="App theme-bg">
         <player />
+        <app-header />
         <sound-list>
             <sound
                 v-for="(sound, index) in sounds"
@@ -17,19 +18,21 @@
 import SoundList from "./SoundList.vue";
 import Sound from "./Sound.vue";
 import Player from "./Player.vue";
+import AppHeader from "./Header.vue";
 
 export default {
     name: "App",
     data: () => {
         return {
-            sounds: window.__INITIAL_DATA__.sounds || []
+            sounds: window.__INITIAL_DATA__.sounds || [],
         };
     },
     components: {
         SoundList,
         Sound,
-        Player
-    }
+        Player,
+        AppHeader,
+    },
 };
 </script>
 
@@ -44,5 +47,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 </style>

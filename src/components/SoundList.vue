@@ -6,14 +6,14 @@
 
 <script>
 export default {
-    name: "SoundList"
-}
+    name: "SoundList",
+};
 </script>
 
 <style scoped lang="scss">
 .SoundList {
     width: 100%;
-    max-width: 860px;
+    max-width: var(--content-width);
     display: flex;
     flex-wrap: wrap;
     padding-top: 1rem;
@@ -23,3 +23,4 @@ export default {
     margin: auto;
 }
 </style>
+
