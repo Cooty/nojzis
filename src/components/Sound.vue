@@ -22,14 +22,14 @@ export default {
     name: "Sound",
     props: {
         icon: {
-            type: String
+            type: String,
         },
         name: {
-            type: String
+            type: String,
         },
         fileName: {
-            type: String
-        }
+            type: String,
+        },
     },
     setup(props) {
         const soundStore = useSoundStore();
@@ -42,20 +42,21 @@ export default {
         };
 
         return {
-            playSound
+            playSound,
         };
-    }
+    },
 };
 </script>
 
 <style scoped lang="scss">
 @use "sass:math";
+@use "../styles/config/breakpoints" as bp;
 .Sound {
     max-width: 50%;
     flex: 0 0 50%;
-    padding: 0.8rem;
+    padding: var(--gutter);
 
-    @media screen and (min-width: 540px) {
+    @media screen and (min-width: #{bp.$sm}) {
         max-width: 33.3333%;
         flex: 0 0 33.3333%;
     }
