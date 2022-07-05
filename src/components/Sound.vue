@@ -1,5 +1,8 @@
 <template>
-    <li class="Sound">
+    <li
+        class="Sound"
+        :class="{ 'Sound--disabled': disabled, 'Sound--playing': playing }"
+    >
         <button type="button" class="Sound__button" @click="playSound">
             <span class="Sound__button-content">
                 <span>
@@ -16,6 +19,7 @@
 </template>
 
 <script>
+import { computed } from "vue";
 import { useSoundStore, usePlayerStore } from "../store";
 
 export default {
@@ -40,9 +44,22 @@ export default {
             }
             soundStore.soundToPlay = props.fileName;
         };
+        const disabled = computed(
+            () =>
+                playerStore.isPlaying &&
+                props.fileName !== soundStore.soundToPlay
+        );
+
+        const playing = computed(
+            () =>
+                playerStore.isPlaying &&
+                props.fileName === soundStore.soundToPlay
+        );
 
         return {
             playSound,
+            disabled,
+            playing,
         };
     },
 };
@@ -61,6 +78,10 @@ export default {
         flex: 0 0 33.3333%;
     }
 
+    &--disabled {
+        opacity: 0.5;
+    }
+
     &__button {
         display: block;
         position: relative;
@@ -73,6 +94,32 @@ export default {
         // TODO: Move to theme
         background: #2fb3ff;
         box-shadow: 20px 20px 60px #2898d9, -20px -20px 60px #36ceff;
+    }
+
+    &--disabled &__button {
+        cursor: not-allowed;
+    }
+
+    &--playing &__button-content {
+        animation: tilt-shaking 0.25s linear infinite;
+    }
+
+    @keyframes tilt-shaking {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(5deg);
+        }
+        50% {
+            transform: rotate(0eg);
+        }
+        75% {
+            transform: rotate(-5deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
     }
 
     &__button-content {
